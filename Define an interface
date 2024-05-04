@@ -1,1 +1,61 @@
+public interface Shape {
+    double calculateArea();
+    double calculatePerimeter();
+}
+public abstract class AbstractShape implements Shape {
+    String color;
+    double length;
+    double width;
 
+    public AbstractShape(String color, double length, double width) {
+        this.color = color;
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return 0.0; // To be implemented in subclasses
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 0.0; // To be implemented in subclasses
+    }
+}
+public class Circle extends AbstractShape {
+    private double radius;
+
+    public Circle(String color, double radius) {
+        super(color, 0, 0);
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+public class Circle extends AbstractShape {
+    private double radius;
+
+    public Circle(String color, double radius) {
+        super(color, 0, 0);
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
